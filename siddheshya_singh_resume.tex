@@ -1,0 +1,143 @@
+%-------------------------
+% ATS-Friendly Resume
+% Author: Siddheshya Singh
+%-------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{xcolor}
+\usepackage{fontawesome5}
+
+\input{glyphtounicode}
+\pdfgentounicode=1
+
+% Font options
+\usepackage[sfdefault]{roboto}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-0.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Section formatting
+\titleformat{\section}{
+  \vspace{-5pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    \textbf{\Huge \scshape Siddheshya Singh} \\ \vspace{5pt}
+    \small
+    \faPhone\ +91-9839562081 $|$
+    \faEnvelope\ \href{mailto:singhsiddheshya@gmail.com}{singhsiddheshya@gmail.com} $|$
+    \faLinkedin\ \href{https://www.linkedin.com/in/siddheshya-singh-a51002209/}{linkedin.com/in/siddheshya-singh-a51002209} $|$
+    \faMapMarker\ Bengaluru, India
+\end{center}
+
+%-----------SUMMARY-----------
+\section{Professional Summary}
+\small{Software Development Engineer with experience building scalable backend systems, distributed event-driven pipelines, and high-throughput microservices across e-commerce and travel domains. Strong expertise in Java, Spring Boot, Apache Kafka, Apache Pulsar, Bigtable, MySQL, MongoDB, Kubernetes, and observability tooling. Proven ability to design near real-time data flows, improve API performance, and deliver customer-facing features across large-scale platforms.}
+
+%-----------EXPERIENCE-----------
+\section{Professional Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Software Development Engineer I}{Jan 2026 -- Present}
+      {Flipkart Travel / Cleartrip}{Bengaluru, India}
+      \resumeItemListStart
+        \resumeItem{Key contributor to the \textbf{Earned Loyalty} feature across Cleartrip and Flipkart Travel, enabling Myntra Elite users to receive eligible Elite benefits on travel platforms through near real-time profile conversion}
+        \resumeItem{Designed and built an event-driven loyalty pipeline using \textbf{Apache Pulsar, Kafka, Bigtable, MySQL, and MongoDB} to process Myntra membership active and expiry events without adding latency to user-facing loyalty lookup APIs}
+        \resumeItem{Implemented a precomputed user-mapping flow that stores Cleartrip users with Myntra mobile hashes in MySQL, resolves incoming Myntra events to travel users, publishes loyalty events to Pulsar, and records membership state in Bigtable through a ledger service}
+        \resumeItem{Built a reliable ledger-to-loyalty-engine flow where membership events are captured as an auditable event ledger and emitted downstream for loyalty computation and Cleartrip Elite entitlement assignment}
+        \resumeItem{Developed a \textbf{Debezium CDC pipeline} on People Accounts database insert operations to identify newly created Cleartrip users who were already Myntra Elite members, backfilling eligibility from MongoDB and triggering loyalty onboarding events}
+        \resumeItem{Collaborated with UAR and Payments teams to deliver distributed backend workflows, improve entitlement accuracy, and maintain low-latency customer journeys across Flipkart Travel and Cleartrip}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Software Development Engineer I}{June 2024 -- Jan 2026}
+      {Lowe's Companies Inc}{Bengaluru, India}
+      \resumeItemListStart
+        \resumeItem{Developed and deployed production-ready \textbf{RESTful APIs} following microservices best practices, serving 100K+ daily requests with sub-200ms p95 latency and 99.95\% success rate}
+        \resumeItem{Streamlined deployment pipelines by establishing \textbf{centralized Helm chart configuration} for 8+ microservices, reducing deployment time by 60\% and eliminating configuration drift across environments}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+%-----------TECHNICAL SKILLS-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages}{: Java, C++} \\
+     \textbf{Frameworks \& Libraries}{: Spring Boot, Spring MVC, Hibernate, REST APIs, Resilience4J} \\
+     \textbf{Distributed Systems}{: Apache Kafka, Apache Pulsar, Apache ZooKeeper, Redis, Debezium CDC} \\
+     \textbf{Databases}{: MySQL, Bigtable, MongoDB, Redis Cache} \\
+     \textbf{DevOps \& Tools}{: Docker, Kubernetes, Helm, Jenkins, Git, Maven, Gradle} \\
+     \textbf{Monitoring \& Observability}{: Grafana, Prometheus, ELK Stack, New Relic} \\
+     \textbf{Design \& Architecture}{: Microservices, Event-Driven Architecture, Low-Level Design, SOLID Principles, Design Patterns}
+    }}
+ \end{itemize}
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {The National Institute of Engineering, Mysore}{2020 -- 2024}
+      {Bachelor of Engineering in Information Science and Engineering}{}
+  \resumeSubHeadingListEnd
+
+\end{document}
