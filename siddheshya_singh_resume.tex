@@ -67,7 +67,7 @@
 \newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
 
 \newcommand{\resumeProjectTitle}[2]{
-  \item[]\small{\textbf{Project: #1} $|$ \textit{#2}}\vspace{-4pt}
+  \item[]\normalsize{\textbf{Project: #1} $|$ \textit{#2}}\vspace{-4pt}
 }
 
 \renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
@@ -114,27 +114,23 @@
       {\textbf{Lowe's Companies Inc}}{June 2024 -- Jan 2026}
       {Software Development Engineer I}{Bengaluru, India}
       \resumeItemListStart
-        \resumeItem{Developed and deployed production-ready \textbf{RESTful APIs} following microservices best practices, serving 100K+ daily requests with sub-200ms p95 latency and 99.95\% success rate}
-        \resumeItem{Streamlined deployment pipelines by establishing \textbf{centralized Helm chart configuration} for 8+ microservices, reducing deployment time by 60\% and eliminating configuration drift across environments}
-        \resumeItem{Worked on backend services for retail workflows, improving API reliability, deployment consistency, and service maintainability across distributed microservices}
+        \resumeProjectTitle{Blueprint AI}{Retail Automation}
+        \resumeItem{Built material-mapping and blueprint parsing modules to convert AI predictions into Lowe's SKUs, improving match precision by \textbf{35\%} and reducing manual fixes by \textbf{55\%}}
+        \resumeItem{Added Redis-backed idempotency, transactional bulk writes, and Grafana observability, reducing duplicate AI calls by \textbf{35\%} and issue diagnosis time by \textbf{30\%}}
+        \resumeProjectTitle{Competitor Quote Feature}{Event-Driven Pricing}
+        \resumeItem{Contributed to Kafka-based quote processing flows that automated competitor quote comparison, reducing manual comparison effort by \textbf{90\%} and improving message latency by \textbf{55\%}}
       \resumeItemListEnd
 
   \resumeSubHeadingListEnd
 
-%-----------PROJECTS-----------
-\section{Projects}
-  \resumeSubHeadingListStart
-
-    \resumeSubheading
-      {Scalable Ride-Hailing Platform}{Java, Spring Boot, Microservices, Kafka, Redis}
-      {Microservices-based ride-sharing application with real-time tracking}{}
-      \resumeItemListStart
-        \resumeItem{Architected a ride-hailing platform using \textbf{Microservices Architecture} with independent services for authentication, booking, entity management, reviews, and geospatial data handling}
-        \resumeItem{Integrated \textbf{Apache Kafka} for asynchronous communication and \textbf{Redis} for distributed caching to improve response time and reduce database load}
-        \resumeItem{Implemented resilience patterns including circuit breaker, API rate limiting, JWT authentication, and request batching for production-grade reliability}
-      \resumeItemListEnd
-
-  \resumeSubHeadingListEnd
+%-----------ACHIEVEMENTS-----------
+\section{Achievements}
+  \resumeItemListStart
+    \resumeItem{Received the \textbf{Excellence Award} at Lowe's for outstanding contributions and performance}
+    \resumeItem{Solved \textbf{1,300+} problems on LeetCode with a peak rating of \textbf{1750}, ranking in the top 10\% globally}
+    \resumeItem{Rated \textbf{1200+} on Codeforces (Pupil); ranked \textbf{3866} out of 25,000 participants in Codeforces Round \#818}
+    \resumeItem{Ranked \textbf{1024} out of 22,304 participants in LeetCode Weekly Contest 453}
+  \resumeItemListEnd
 
 %-----------TECHNICAL SKILLS-----------
 \section{Technical Skills}
