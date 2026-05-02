@@ -66,6 +66,10 @@
 
 \newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
 
+\newcommand{\resumeProjectTitle}[1]{
+  \item[]\small{\textbf{#1}}\vspace{-4pt}
+}
+
 \renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
 
 \newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
@@ -90,7 +94,7 @@
 
 %-----------SUMMARY-----------
 \section{Professional Summary}
-\small{Software Development Engineer with experience building scalable backend systems, distributed event-driven pipelines, and high-throughput microservices across e-commerce and travel domains. Strong expertise in Java, Spring Boot, Apache Kafka, Apache Pulsar, Bigtable, MySQL, MongoDB, Kubernetes, and observability tooling. Proven ability to design near real-time data flows, improve API performance, and deliver customer-facing features across large-scale platforms.}
+\small{Software Development Engineer with experience building scalable backend systems, distributed event-driven pipelines, payments integrations, and high-throughput microservices across e-commerce and travel domains. Strong expertise in Java, Spring Boot, Apache Kafka, Apache Pulsar, Bigtable, MySQL, MongoDB, Kubernetes, third-party API integrations, and observability tooling. Proven ability to design near real-time data flows, optimize API latency, and deliver customer-facing features across large-scale platforms.}
 
 %-----------EXPERIENCE-----------
 \section{Professional Experience}
@@ -98,14 +102,19 @@
 
     \resumeSubheading
       {Software Development Engineer I}{Jan 2026 -- Present}
-      {Flipkart Travel / Cleartrip}{Bengaluru, India}
+      {\textbf{Flipkart} Travel / Cleartrip}{Bengaluru, India}
       \resumeItemListStart
+        \resumeProjectTitle{Project: Earned Loyalty Platform}
         \resumeItem{Key contributor to the \textbf{Earned Loyalty} feature across Cleartrip and Flipkart Travel, enabling Myntra Elite users to receive eligible Elite benefits on travel platforms through near real-time profile conversion}
         \resumeItem{Designed and built an event-driven loyalty pipeline using \textbf{Apache Pulsar, Kafka, Bigtable, MySQL, and MongoDB} to process Myntra membership active and expiry events without adding latency to user-facing loyalty lookup APIs}
         \resumeItem{Implemented a precomputed user-mapping flow that stores Cleartrip users with Myntra mobile hashes in MySQL, resolves incoming Myntra events to travel users, publishes loyalty events to Pulsar, and records membership state in Bigtable through a ledger service}
         \resumeItem{Built a reliable ledger-to-loyalty-engine flow where membership events are captured as an auditable event ledger and emitted downstream for loyalty computation and Cleartrip Elite entitlement assignment}
         \resumeItem{Developed a \textbf{Debezium CDC pipeline} on People Accounts database insert operations to identify newly created Cleartrip users who were already Myntra Elite members, backfilling eligibility from MongoDB and triggering loyalty onboarding events}
-        \resumeItem{Collaborated with UAR and Payments teams to deliver distributed backend workflows, improve entitlement accuracy, and maintain low-latency customer journeys across Flipkart Travel and Cleartrip}
+        \resumeProjectTitle{Project: SuperMoney Gift Voucher Integration}
+        \resumeItem{Solely designed and delivered the \textbf{SuperMoney Gift Voucher} integration for Cleartrip Payments, enabling dummy gift voucher issuance by SuperMoney while deferring Pine Labs-backed voucher creation until actual customer redemption}
+        \resumeItem{Implemented BIN-based gift voucher identification and redemption resolution flow to detect SuperMoney vouchers at Cleartrip, call SuperMoney APIs for voucher validation, and avoid unnecessary Pine Labs charges for unredeemed vouchers}
+        \resumeItem{Reduced gift voucher redemption latency from \textbf{1--1.5 seconds to 300--400 ms} by integrating SuperMoney webhook callbacks and a Cleartrip-side polling API for faster payment status resolution}
+        \resumeItem{Collaborated with UAR and Payments teams to deliver distributed backend workflows, improve entitlement and payment accuracy, and maintain low-latency customer journeys across Flipkart Travel and Cleartrip}
       \resumeItemListEnd
 
     \resumeSubheading
@@ -126,6 +135,7 @@
      \textbf{Frameworks \& Libraries}{: Spring Boot, Spring MVC, Hibernate, REST APIs, Resilience4J} \\
      \textbf{Distributed Systems}{: Apache Kafka, Apache Pulsar, Apache ZooKeeper, Redis, Debezium CDC} \\
      \textbf{Databases}{: MySQL, Bigtable, MongoDB, Redis Cache} \\
+     \textbf{Integrations}{: Payments, Gift Vouchers, Webhooks, Polling APIs, Third-Party APIs} \\
      \textbf{DevOps \& Tools}{: Docker, Kubernetes, Helm, Jenkins, Git, Maven, Gradle} \\
      \textbf{Monitoring \& Observability}{: Grafana, Prometheus, ELK Stack, New Relic} \\
      \textbf{Design \& Architecture}{: Microservices, Event-Driven Architecture, Low-Level Design, SOLID Principles, Design Patterns}
