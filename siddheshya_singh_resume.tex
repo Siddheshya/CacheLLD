@@ -1,0 +1,158 @@
+%-------------------------
+% ATS-Friendly Resume
+% Author: Siddheshya Singh
+%-------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{xcolor}
+\usepackage{fontawesome5}
+
+\input{glyphtounicode}
+\pdfgentounicode=1
+
+% Font options
+\usepackage[sfdefault]{roboto}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-0.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Section formatting
+\titleformat{\section}{
+  \vspace{-5pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\newcommand{\resumeProjectTitle}[2]{
+  \item[]\normalsize{\textbf{Project: #1} $|$ \textit{#2}}\vspace{1pt}
+}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    \textbf{\Huge \scshape Siddheshya Singh} \\ \vspace{5pt}
+    \small
+    \faPhone\ +91-9839562081 $|$
+    \faEnvelope\ \href{mailto:singhsiddheshya@gmail.com}{singhsiddheshya@gmail.com} $|$
+    \faLinkedin\ \href{https://www.linkedin.com/in/siddheshya-singh-a51002209/}{linkedin.com/in/siddheshya-singh} \\ \vspace{2pt}
+    \faCode\ \href{https://leetcode.com/u/sidd0027/}{leetcode.com/u/sidd0027} $|$
+    \faMapMarker\ Bengaluru, India
+\end{center}
+
+%-----------EXPERIENCE-----------
+\section{Professional Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {\textbf{Flipkart}}{Jan 2026 -- Present}
+      {Software Development Engineer I -- Travel, UAR \& Payments}{Bengaluru, India}
+      \resumeItemListStart
+        \resumeProjectTitle{Earned Loyalty Platform}{Cleartrip / Flipkart Travel}
+        \resumeItem{Spearheaded backend development for \textbf{Earned Loyalty}, enabling Myntra Elite users to receive Cleartrip Elite benefits through near real-time profile conversion across Cleartrip and Flipkart Travel}
+        \resumeItem{Architected an event-driven pipeline using \textbf{Apache Pulsar, Kafka, Bigtable, MySQL, MongoDB, and Debezium CDC}, processing membership active/expiry events without adding latency to user-facing loyalty APIs}
+        \resumeItem{Designed identity-mapping, ledger, and loyalty-engine flows to resolve hashed mobile numbers, persist auditable membership state, and onboard newly created Cleartrip users eligible for Myntra Elite}
+        \resumeProjectTitle{SuperMoney Gift Voucher Integration}{Cleartrip Payments}
+        \resumeItem{Owned end-to-end \textbf{SuperMoney Gift Voucher} redemption integration, deferring Pine Labs-backed voucher creation until actual customer redemption to reduce unnecessary issuance cost}
+        \resumeItem{Implemented BIN-based voucher detection and SuperMoney API resolution for validation, redemption, payment status synchronization, and third-party voucher settlement}
+        \resumeItem{Optimized gift voucher redemption by integrating SuperMoney webhook callbacks and Cleartrip-side polling APIs, reducing latency from \textbf{1--1.5 sec to 300--400 ms}}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {\textbf{Lowe's Companies Inc}}{June 2024 -- Jan 2026}
+      {Software Development Engineer I}{Bengaluru, India}
+      \resumeItemListStart
+        \resumeProjectTitle{Blueprint AI}{Retail Automation}
+        \resumeItem{Delivered material-mapping and blueprint parsing modules that converted AI predictions into Lowe's SKUs, improving match precision by \textbf{35\%} and reducing manual fixes by \textbf{55\%}}
+        \resumeItem{Improved Blueprint AI reliability with Redis-backed idempotency, transactional bulk writes, and Grafana observability, reducing duplicate AI calls by \textbf{35\%} and time to diagnose issues by \textbf{30\%}}
+        \resumeProjectTitle{Competitor Quote Feature}{Event-Driven Pricing}
+        \resumeItem{Built Kafka-based quote processing flows that automated competitor quote comparison, reducing manual effort by \textbf{90\%} and improving message latency by \textbf{55\%}}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+%-----------ACHIEVEMENTS-----------
+\section{Achievements}
+  \resumeItemListStart
+    \resumeItem{Received the \textbf{Excellence Award} at Lowe's for outstanding contributions and performance}
+    \resumeItem{Solved \textbf{1,300+} problems on LeetCode with a peak rating of \textbf{1750}, ranking in the top 10\% globally}
+    \resumeItem{Rated \textbf{1200+} on Codeforces (Pupil); ranked \textbf{3,866} out of 25,000 participants in Codeforces Round \#818}
+    \resumeItem{Ranked \textbf{1024} out of 22,304 participants in LeetCode Weekly Contest 453}
+  \resumeItemListEnd
+
+%-----------TECHNICAL SKILLS-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages}{: Java, C++} \\
+     \textbf{Frameworks \& Libraries}{: Spring Boot, Spring MVC, Hibernate, REST APIs, Resilience4J} \\
+     \textbf{Distributed Systems}{: Apache Kafka, Apache Pulsar, Apache ZooKeeper, Redis, Debezium CDC} \\
+     \textbf{Databases}{: MySQL, Bigtable, MongoDB, Redis Cache} \\
+     \textbf{Payments \& Integrations}{: Gift Vouchers, Webhooks, Polling APIs, Third-Party APIs, Payment Status Resolution} \\
+     \textbf{DevOps \& Tools}{: Docker, Kubernetes, Helm, Jenkins, Git, Maven, Gradle} \\
+     \textbf{Monitoring \& Architecture}{: Grafana, Prometheus, Microservices, Event-Driven Architecture, Low-Level Design, Design Patterns}
+    }}
+ \end{itemize}
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {The National Institute of Engineering, Mysore}{2020 -- 2024}
+      {Bachelor of Engineering in Information Science and Engineering}{}
+  \resumeSubHeadingListEnd
+
+\end{document}
